@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .d1,.d2{border:5px solid green;
+          display: block;
+    }
+    .d1{
+      width: 400px;
+      height: 100px;
+    }
+    .d2{
+      display: inline-block;
+      width: 600px;
+      height: 100px;
+    }
+    .d3{
+      display: inline;
+      width: 400px;   /*行内元素不能设置宽高*/
+      height: 100px;
+    }
+    .d3{
+       display: none;
+    }
+  </style>
+</head>
+
+
+<body>
+<p class="d1">段落1</p> <!--块级元素-->
+<p class="d2">段落2</p> <!--行内块元素-->
+<p class="d2">段落3</p>
+<p class="d3">段落4</p><!--行内元素-->
+<p class="d3">段落5</p>
+<p class="d4">段落5</p>
+</body>
+</html>

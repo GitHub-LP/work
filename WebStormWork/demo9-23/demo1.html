@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            border: 1px solid green;
+            width: 500px;
+            height: 400px;
+        }
+        .container>div{
+            border: 1px solid red;
+            width: 200px;
+            height: 100px;
+        }
+        .container>div:nth-child(1),.container>div:nth-child(2){
+            float: left;
+        }
+        .container>div:nth-child(3){
+            clear: both;
+        }
+        .container>div:nth-child(1),div:nth-child(2),div:nth-child(3){
+            padding: 2%;/*父元素的宽带百分比*/
+            margin: 2%;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/css1.css" type="text/css" rel="stylesheet">
+    <style>
+        *{
+            list-style: none;
+        }
+        img{
+            width: 500px;
+            height: 400px;
+        }
+        /*  标记选择器权重1*/
+        .d1{
+            color: red;
+            font-size: 64px;
+        }
+         /*类选择器权重10*/
+        #d2{
+            color: chartreuse;
+        }
+    /*    ID选择器权重100*/
+        [type="text"]{
+            background-color: #159400;
+        }
+    </style>
+</head>
+<body>
+<p class="d1" align="center">1</p>
+<p class="d1">类</p>
+<h1 class="d1" id="d2">id选择器</h1>
+<img src="../img/HTML.png" alt="我是一张图片" align="left"width="400" height="400">
+<ol>
+    <li align="center"><font color="red" size="12" >床前明月光</font> </li>
+    <li>疑是地上霜</li>
+    <li>举头望明月</li>
+    <li>低头思故乡</li>
+</ol>
+<li>法外狂徒张三</li>
+<div>2296621661</div>
+</body>
+</html>

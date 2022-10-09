@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .main{
+            width: 90%;
+            border: 1px solid red;
+            margin: auto;
+        }
+        .left,.right,.mid{
+            border: 1px solid green;
+            float: left;
+            box-sizing: border-box;
+            padding-left: 2rem;
+            margin-left: 2%;
+        }
+        .main:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .left{
+            width: 20%;
+        }
+        .mid{
+            width: 44%;
+        }
+        .right{
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="left">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <div class="mid">mid</div>
+    <div class="right">right</div>
+</div>
+</body>
+</html>

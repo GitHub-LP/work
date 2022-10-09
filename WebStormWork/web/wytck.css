@@ -1,0 +1,10 @@
+ @charset "utf-8";
+/*CSS Document */
+*{margin:0; padding:0; font-size:14px; font-family:"微软雅黑";}
+.bg{width:298px; height:283px; background:url(1.png) no-repeat; margin:100px auto; border:1px solid
+#e2e1e1;}
+h2{width:288px; height:34px; background:#fff9fb url(2.png) no-repeat 268px center; color:#515151;
+line-height:34px; border-bottom:1px solid #CCC; padding-left:10px;}
+h3{width:270px; text-align:center; font-size: 14px; margin-top:40px; color:f#ff; padding-left:18px;}
+h3 span{font-size:18px; color:#ffdf71;}
+p{width:100px; height:18px; margin:7px auto 0; background-color:#ce4d52; color:#ebebeb; font-size:12px;}

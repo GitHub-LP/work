@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        .header{
+            border: 1px solid blue;
+            height: 20%;
+        }
+        .container{
+            height: 60%;
+            border: 1px solid green;
+        }
+        .container>div{
+            height: 100%;
+            border: 1px solid red;
+            float: left;
+            box-sizing: border-box;
+        }
+        .left,.right{
+            width: 20%;
+        }
+        .mid{
+            width: 60%;
+        }
+        .container:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .footer{
+            height: 20%;
+            border: 1px solid palevioletred;
+        }
+        .left img{
+            width: 200px;
+        }
+        .mid>h1,.mid>p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="header">头部</div>
+<div class="container">
+    <div class="left">
+        左侧边栏
+        <img src="./HTML.png" alt="">
+    </div>
+    <div class="mid">
+        <h1>静夜思</h1>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+    <div class="right">右侧边栏</div>
+</div>
+<div class="footer">底部</div>
+</body>
+</html>

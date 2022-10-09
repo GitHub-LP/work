@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style >
+        .pr {
+            width: 206px;
+            height: 16px;
+            background: green;
+            color: red;
+        }
+        progress::-webkit-progress-bar {
+            background: red;
+            border-radius: 8px;
+        }
+        progress::-webkit-progress-value {
+            background: yellow;
+            border-radius: 8px;
+        }
+    </style>
+<body>
+<progress class="pr" value="70" max="100">123456</progress>
+</body>
+</html>

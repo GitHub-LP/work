@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+body{ font-family:"微软雅黑"}
+body,dl,dt,dd{padding:0; margin:0; border:0;}
+dd{width:200px; float:left; padding:10px 0 0 13px;}
+dt{width:110px; height:137px; background:url(images/man_r1_c2.jpg) 
+no-repeat; margin-bottom:10px; float:right;}
+dl{
+   width:330px;
+   height:137px;
+   border:1px solid #669800; 
+   margin:auto;
+} 
+.d1{ font-size:20px; color:#669800}
+.d2{font-size:13px;}

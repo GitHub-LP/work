@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      /*后代选择器*/
+      .d1 p{
+        color: red;
+        font-size: 32px;
+      }
+      div p{
+        color: chartreuse;
+        font-size: 16px;
+      }
+      /*子代选择器*/
+      .d1>p{
+        color: #00B0DC;
+        font-size: 32px;
+      }
+    </style>
+</head>
+<body>
+<div class="d1">
+  <p>段落1</p>
+  <h1>标题</h1>
+  <p>段落2</p>
+ <div>
+   <p>段落3</p>
+ </div>
+</div>
+<div>
+  <p>段落4</p>
+</div>
+
+</body>
+</html>

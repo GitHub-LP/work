@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>区间划分：[0,60)，[60,90], (90,100]</p>
+<!--根据min/low/high/max的值分为3段，当最佳值optimum的值在第1段区间，
+当前值value值在第1段区间显示颜色为绿色；
+当前值value值在第2段区间显示颜色为黄色；
+当前值value值在第3段区间显示颜色为红色；-->
+<p><meter min="0" low="60" high="90" max="100" optimum="45" value="45"></meter></p>
+<p><meter min="0" low="60" high="90" max="100" optimum="45" value="61"></meter></p>
+<p><meter min="0" low="60" high="90" max="100" optimum="45" value="91"></meter></p>
+<!--根据min/low/high/max的值分为3段，当最佳值optimum的值在第2段区间，
+当前值value值在第1段区间显示颜色为黄色；
+当前值value值在第2段区间显示颜色为绿色；
+当前值value值在第3段区间显示颜色为黄色；-->
+<p><meter min="0" low="60" high="90" max="100" optimum="70" value="45"></meter></p>
+<p><meter min="0" low="60" high="90" max="100" optimum="70" value="61"></meter></p>
+<p><meter min="0" low="60" high="90" max="100" optimum="70" value="91"></meter></p>
+<!--根据min/low/high/max的值分为3段，当最佳值optimum的值在第3段区间，
+当前值value值在第1段区间显示颜色为红色；
+当前值value值在第2段区间显示颜色为黄色；
+当前值value值在第3段区间显示颜色为绿色；-->
+<p><meter min="0" low="60" high="90" max="100" optimum="95" value="45"></meter></p>
+<p><meter min="0" low="60" high="90" max="100" optimum="95" value="61"></meter></p>
+<p><meter min="0" low="60" high="90" max="100" optimum="95" value="91"></meter></p>
+</body>
+</html>
