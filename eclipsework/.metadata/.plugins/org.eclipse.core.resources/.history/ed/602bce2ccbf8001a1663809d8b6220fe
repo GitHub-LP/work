@@ -1,0 +1,21 @@
+package 作业包;
+import java.util.Random;
+
+public class Sjscs {
+		public static void main(String[] args) {
+		
+			int num1,num2,x=1;
+			Random ran=new Random();
+			num1=ran.nextInt(100);
+		    num2=ran.nextInt(100);
+			while(x>0)
+		   {  
+				if(num1==num2)
+		   { 
+		    System.out.println("一号为"+num1+" 二号为"+num2);
+		    break;}
+		   
+			System.out.print(+num1+"\t");
+			num1=num2;}
+		   }
+}

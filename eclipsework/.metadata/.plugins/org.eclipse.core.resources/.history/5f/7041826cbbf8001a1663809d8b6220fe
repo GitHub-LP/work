@@ -1,0 +1,17 @@
+package ×÷Òµ°ü;
+
+import java.util.Scanner;
+
+public class TestBreak {
+
+	public static void main(String[] args) {
+		int sum=0,i;
+		if(sum>=100)
+		for(i=0;i<=20;i++)
+		{   
+			 sum=sum+i;
+				break;}
+		System.out.println(sum);   
+	}
+
+}

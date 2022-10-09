@@ -1,0 +1,42 @@
+package chap04;
+
+public class DevideConquer {
+	public static int partition( int r[], int left,int right ) {//划分:基准采用随机选择
+		int pos=(int)(Math.random()*(right-left)+left);//随机取一个位置
+		int pivot = r[pos];//设第一个数为基准
+		      int i=left,j=right;
+		      while (i<j){
+		          while( i<j && r[j]>=pivot )
+		                 j--;	//从右查找一个小的数
+		          while( i<j && r[i]<=pivot )
+		                 i++;   //从左查找一个大的数if(i<j)
+		          if(i<j){
+		          int temp=r[i];//两者交换
+		          r[i]=r[j];
+		          r[j]=temp;
+		          }
+		      }
+		      r[pos]=r[i];//最后将基准交换到i处
+		      r[i]=pivot;
+		      return i; //返回基准的位置
+    }
+ public static void quickSort(int[] a,int left,int right) {//快速排序
+	 if( left<right){ 
+		      int k=partition(a,left,right);
+		      quickSort(a , left,k-1);//递归左边
+		      quickSort(a,k+1,right); //递归右边}
+		      }
+             }
+ public static void display( int[] a) {
+	 for( int i=0;i<a.length;i++)
+		System.out.print(a[i]+"");
+	    System.out.println();
+		 }
+public static void main(String[] args) {
+	int[] a= {12,3,45,6,78,9,11,88,7,9,44};
+	quickSort(a,0,a.length-1);
+    display(a);
+    }
+ }
+
+
