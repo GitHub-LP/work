@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .menu-1{
+            width: 25%;
+            height: 32px;
+            list-style: none;
+            float: left;
+            transform-style: preserve-3d;
+            position: relative;
+            transition: all 1000ms;
+        }
+        .menu-1>div{
+            width: 98%;
+            height: 32px;
+            border: 1px solid red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .menu-1 .front{
+            transform: translateZ(16px);
+            background-color: red;
+        }
+        .menu-1 .bottom{
+            transform: rotateX(-90deg) translateZ(16px);
+            background-color: goldenrod;
+        }
+        .menu-1{
+            transform: rotateX(90deg);
+        }
+        .menu-1:hover{
+            transform: rotateX(0deg);
+        }
+        /*.box{
+            width: 500px;
+            height: 100px;
+            background-color: red;
+            transition: all 2s ;
+        }
+        .box:hover{
+            background-color: goldenrod;
+        }*/
+        .clear:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .menu-1>ul{
+            position: absolute;
+            top: 32px;
+        }
+        .menu-1>ul>li{
+            transform: rotateY(90deg);
+            transition: all 2000ms;
+            opacity: 0;
+            background-color: aqua;
+        }
+        .menu-1:hover>ul>li{
+            transform: rotateY(0deg);
+            opacity: 1;
+        }
+        .menu-1>ul>li:nth-child(1){
+            transition-delay: 100ms;
+        }
+        .menu-1>ul>li:nth-child(2){
+            transition-delay: 200ms;
+        }
+        .menu-1>ul>li:nth-child(3){
+            transition-delay: 300ms;
+        }
+        .menu-1>ul>li:nth-child(4){
+            transition-delay: 400ms;
+        }
+        .menu-1>ul>li:nth-child(5){
+            transition-delay: 500ms;
+        }
+        .menu-1>ul>li:nth-child(6){
+            transition-delay: 600ms;
+        }
+    </style>
+</head>
+<body>
+<div class="clear">
+    <ul>
+        <li class="menu-1">
+            <div class="front">haha</div>
+            <div class="bottom">heihei</div>
+            <ul>
+                <li><a href="http://www.baidu.com" target="_blank">fdfdsf</a></li>
+                <li>fdfdww</li>
+                <li>fdfdff</li>
+                <li>fdfdgg</li>
+                <li>fdfdfhhh</li>
+                <li>fdfdfkkk</li>
+            </ul>
+        </li>
+        <li class="menu-1">
+            <div class="front">123</div>
+            <div class="bottom">456</div>
+            <ul>
+                <li><a href="http://www.baidu.com" target="_blank">fdfdsf</a></li>
+                <li>123w</li>
+                <li>5454dff</li>
+                <li>f6565dgg</li>
+                <li>fdfrtrtfhhh</li>
+                <li>fdfdfkkk</li>
+            </ul>
+        </li>
+        <li class="menu-1">nav3</li>
+        <li class="menu-1">nav4</li>
+    </ul>
+</div>
+<div class="box"></div>
+</body>
+</html>
