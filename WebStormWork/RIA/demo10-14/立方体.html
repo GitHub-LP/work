@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+   .box{
+     width: 200px;
+     height: 200px;
+     position: relative;
+     /*perspective: 1000px;*/
+     transform-style: preserve-3d;
+     transform: translate(150px ,100px) rotateY(-30deg) rotateZ(30deg);
+     animation: D 4s linear infinite;
+       margin: 200px auto;
+   }
+   .box>div{
+     width: 200px;
+     height: 200px;
+     position: absolute;
+     margin: auto;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     opacity: 0.5;
+     text-align: center;
+     line-height: 200px;
+     font-size: 100px;
+
+   }
+    .前{
+      background-color: red;
+      transform: translateZ(100px);
+    }
+    .后{
+      background-color: #ffc000;
+      transform: translateZ(-100px);
+    }
+    .左{
+      background-color: #f8ff00;
+      transform: rotateY(90deg) translateZ(-100px);
+    }
+    .右{
+      background-color: #47ff00;
+      transform: rotateY(90deg) translateZ(100px);
+    }
+    .上{
+      background-color: #168bff;
+      transform: rotateX(90deg) translateZ(100px);
+    }
+    .下{
+      background-color: #7d16ff;
+      transform: rotateX(90deg) translateZ(-100px);
+    }
+   @keyframes D {
+       0%{transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+       100%{transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);}
+   }
+   .box:hover>.上{
+       transform: rotateX(90deg) translateZ(200px);
+   }
+   .box:hover>.下{
+       transform: rotateX(-90deg) translateZ(200px);
+   }
+   .box:hover>.左{
+       transform: rotateY(-90deg) translateZ(200px);
+   }
+   .box:hover>.右{
+       transform: rotateY(90deg) translateZ(200px);
+   }
+   .box:hover>.前{
+       transform: rotateZ(90deg) translateZ(-200px);
+   }
+   .box:hover>.后{
+       transform: rotateZ(90deg) translateZ(200px);
+   }
+
+
+  </style>
+</head>
+<body>
+<div class="box">
+<div class="前"></div>
+<div class="后"></div>
+<div class="左"></div>
+<div class="右"></div>
+<div class="上"></div>
+<div class="下"></div>
+</div>
+
+</body>
+</html>
