@@ -47,8 +47,8 @@ p{
 }
 .peach6 {
     background-position: 0 -532px;
-    left:853px;
-    top: 395px;
+    left:827px;
+    top: 397px;
     animation: 2s infinite shake ease-in-out ;
 }
 @keyframes shake {

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .out{
+            border-bottom: 10px solid green;
+            height: 100px;
+            position: relative;
+        }
+        .in{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            border-radius: 50%;
+            border: 20px solid transparent;
+            border-left-color: yellow;
+            border-right-color: chocolate;
+            border-top-color: #159400;
+            border-bottom-color: #00dede;
+            animation: mydemo 5s linear infinite 2s alternate ;
+        }
+        @keyframes mydemo {
+            0%{
+                left: 0px;
+                transform: rotateZ(0deg);
+            }
+            50%{
+                left: 50%;
+                transform: rotateZ(360deg);
+            }
+            100%{
+                left: 100%;
+                transform: rotateZ(720deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="out">
+    <div class="in"></div>
+</div>
+</body>
+</html>

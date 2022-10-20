@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .out{
+            width: 1164px;
+            height: 631px;
+            border: 1px solid green;
+            background-image: url("./images/bg.jpg");
+            margin: auto;
+            position: relative;
+        }
+        .out>div{
+            width: 90px;
+            height: 90px;
+            border: 1px solid red;
+            background-image: url("./images/peach.png");
+            position: absolute;
+            transform-origin: 50% 0;
+        }
+        .out>div:nth-child(1){
+            background-position: 0 0;
+            left: 511px;
+            top:249px;
+            animation: mydemo1 2s infinite linear;
+        }
+        .out>div:nth-child(2){
+            background-position: 0 -112px;
+        }
+        @keyframes mydemo1 {
+            0%{
+                transform: rotateZ(0deg);
+            }
+            25%{
+                transform: rotateZ(-30deg);
+            }
+            50%{
+                transform: rotateZ(30deg);
+            }
+            75%{
+                transform: rotateZ(30deg);
+            }
+            100%{
+                transform: rotateZ(-30deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="out">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>
