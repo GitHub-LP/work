@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .out{
+      border-bottom: 5px solid gold;
+      height: 100px;
+      position: relative;
+    }
+    .in{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      border-radius: 50%;
+      animation: dh 5s linear infinite;
+      border:5px solid white;
+      border-top-color: #00ff17;
+      border-bottom-color: #FFFF00;
+      border-left-color: #00FFFF;
+      border-right-color: #FF33FF;
+
+    }
+    @keyframes dh {
+      0%{
+        left: 0%;
+      }
+      50%{
+        left: 50%;
+      }
+      100%{
+        left: 100%;
+      }
+      from{transform: rotate(0deg);}
+      to{transform: rotate(360deg);}
+    }
+  </style>
+</head>
+<body>
+<div class="out">
+  <div class="in"></div>
+</div>
+</body>
+</html>

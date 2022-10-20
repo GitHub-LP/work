@@ -1,0 +1,68 @@
+.contact_form{
+    width: 70%;
+    margin: 0 auto;
+}
+.contact_form ul{
+    width: 750px;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.contact_form li{
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+.contact_form li:first-child,
+.contact_form li:last-child{
+    border-bottom: 1px solid #777;
+}
+.contact_form span{
+    width: 150px;
+    display:inline-block;
+}
+.usually input{
+    height: 20px;
+    width: 220px;
+    padding: 5px 8px;
+}
+*:focus{
+    outline: none;
+}
+.usually input,
+.usually textarea{
+    background: url("../img/青海湖.jpg") no-repeat 98% center;
+    box-shadow: 0 10px 15px #eee inset;
+    border-radius: 2px;
+}
+.contact_form textarea{
+    padding: 8px;
+    width: 300px;
+}
+.usually input:focus,
+.usually textarea:focus{
+    background: #fff;
+}
+input[type=submit]{
+    margin-left: 156px;
+    background-color: aquamarine;
+    border: 1px solid #509115;
+    border-radius: 3px;
+    color: white;
+    padding: 6px 20px;
+    text-align: center;
+}
+input[type=submit]:hover{
+    opacity: .85;
+    cursor: pointer;
+
+}
+.usually input:focus:invalid,
+.usually textarea:focus:invalid{
+    background: url("../img/青海湖.jpg") no-repeat 98% center;
+    box-shadow: 0 0 50px #ee5;
+}
+.usually input:required:valid,
+.usually textarea:required:valid{
+    background: url("../img/青海湖.jpg") no-repeat 98% center;
+    box-shadow:  0 0 5px #5cd052;
+}

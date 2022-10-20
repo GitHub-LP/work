@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+   .out{
+     width: 200px;
+     height: 200px;
+     position: relative;
+     /*perspective: 1000px;*/
+     transform-style: preserve-3d;
+     transform: translate(150px ,100px) rotateY(-30deg) rotateZ(30deg);
+     animation: D 8s linear infinite;
+       margin: 200px auto;
+
+   }
+   .box>div{
+     width: 200px;
+     height: 200px;
+     position: absolute;
+     margin: auto;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     /*opacity: 0.5;*/
+     text-align: center;
+     line-height: 200px;
+     font-size: 100px;
+       background-size: 100% 100%;
+
+   }
+    .前{
+
+        transform: translateZ(100px);
+        background-image: url("./img/img (1).JPG");
+
+    }
+    .后{
+        background-image: url("./img/img (2).JPG");
+        transform: translateZ(-100px);
+
+    }
+    .左{
+        background-image: url("./img/img (3).JPG");
+        transform: rotateY(90deg) translateZ(-100px);
+
+    }
+    .右{
+        background-image: url("./img/img (4).JPG");
+        transform: rotateY(90deg) translateZ(100px);
+
+    }
+    .上{
+        background-image: url("./img/img (5).JPG");
+        transform: rotateX(90deg) translateZ(100px);
+
+    }
+    .下{
+        background-image: url("./img/img (6).JPG");
+        transform: rotateX(90deg) translateZ(-100px);
+
+    }
+   @keyframes D {
+       0%{transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+       100%{transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);}
+   }
+   .out:hover>.上{
+       transform: rotateX(90deg) translateZ(200px);
+   }
+   .out:hover>.下{
+       transform: rotateX(-90deg) translateZ(200px);
+   }
+   .out:hover>.左{
+       transform: rotateY(-90deg) translateZ(200px);
+   }
+   .out:hover>.右{
+       transform: rotateY(90deg) translateZ(200px);
+   }
+   .in:hover>.前1{
+       transform: rotateZ(90deg) translateZ(-100px);
+   }
+   .in:hover>.后1{
+       transform: rotateZ(90deg) translateZ(100px);
+   }
+   .in:hover>.上1{
+       transform: rotateX(90deg) translateZ(100px);
+   }
+   .in:hover>.下1{
+       transform: rotateX(-90deg) translateZ(100px);
+   }
+   .in:hover>.左1{
+       transform: rotateY(-90deg) translateZ(100px);
+   }
+   .in:hover>.右1{
+       transform: rotateY(90deg) translateZ(100px);
+   }
+   .in:hover>.前1{
+       transform: rotateZ(90deg) translateZ(-200px);
+   }
+   .in:hover>.后1{
+       transform: rotateZ(90deg) translateZ(200px);
+   }
+  </style>
+</head>
+<body>
+<div class="box">
+    <div class="out">
+         <div class="前"></div>
+         <div class="后"></div>
+         <div class="左"></div>
+         <div class="右"></div>
+         <div class="上"></div>
+         <div class="下"></div>
+    <div class="in">
+        <div class="前1"></div>
+        <div class="后1"></div>
+        <div class="左1"></div>
+        <div class="右1"></div>
+        <div class="上1"></div>
+        <div class="下1"></div>
+    </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
