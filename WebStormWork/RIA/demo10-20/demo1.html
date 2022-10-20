@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+      .out{
+          border-bottom: 5px solid gold;
+          position: relative;
+
+      }
+      .in{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+        animation: dh 4s linear infinite;
+
+    }
+    @keyframes dh {
+      0%{
+          width: 100px;
+          left: 0;
+
+      }
+      50%{
+          width: 200px;
+          left: 200px;
+      }
+      100%{
+          width: 500px;
+          left: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="out">
+  <div class="in"></div>
+</div>
+</body>
+</html>
