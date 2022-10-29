@@ -30,7 +30,7 @@
 }
 .usually input,
 .usually textarea{
-    background: url("../img/青海湖.jpg") no-repeat 98% center;
+    background: url("../../旅游/img/青海湖.jpg") no-repeat 98% center;
     box-shadow: 0 10px 15px #eee inset;
     border-radius: 2px;
 }
@@ -58,11 +58,11 @@ input[type=submit]:hover{
 }
 .usually input:focus:invalid,
 .usually textarea:focus:invalid{
-    background: url("../img/青海湖.jpg") no-repeat 98% center;
+    background: url("../../旅游/img/青海湖.jpg") no-repeat 98% center;
     box-shadow: 0 0 50px #ee5;
 }
 .usually input:required:valid,
 .usually textarea:required:valid{
-    background: url("../img/青海湖.jpg") no-repeat 98% center;
+    background: url("../../旅游/img/青海湖.jpg") no-repeat 98% center;
     box-shadow:  0 0 5px #5cd052;
 }

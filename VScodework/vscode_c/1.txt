@@ -1,5 +1,0 @@
-Problems loading reference 'schemaservice://combinedschema/cpptools-schema:/c_cpp_properties.schema.json':
- Unable to load schema from 'schemaservice://combinedschema/cpptools-schema:/c_cpp_properties.schema.json':
-  cannot open schemaservice://combinedschema/cpptools-schema%3A/c_cpp_properties.schema.json. 
-  Detail: Unable to resolve resource schemaservice://combinedschema/cpptools-schema%3A/c_cpp_properties.schema.
-  json.(768)

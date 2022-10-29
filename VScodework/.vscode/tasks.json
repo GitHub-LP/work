@@ -19,7 +19,7 @@
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
                 "-fexec-charset=gbk",   //这行解决中文乱码问题
-                "-lwsock32"//socket
+                "-lwsock32" //socket-TCP
             ],
             "options": {
                 "cwd": "${fileDirname}"
