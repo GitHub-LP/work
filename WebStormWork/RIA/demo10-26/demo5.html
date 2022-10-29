@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input:required{
+            background-image: url("./images/attention.png");
+            background-repeat: no-repeat;
+            background-position: right center;
+        }
+        /*input:required:focus{
+            background-color: #159400;
+        }*/
+        input:focus:invalid{
+            background-image: url("./images/warn.png");
+            width: 200px;
+            box-shadow: 5px 5px 5px palevioletred;
+        }
+        input:required:valid{
+            background-image: url("./images/right.png");
+        }
+
+    </style>
+</head>
+<body>
+<!--帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$-->
+<form action="#">
+    用户名：<input type="text" required name="username" pattern="^[a-zA-Z][a-zA-Z0-9_]{4,15}$"> <br>
+    密码：<input type="password" required name="pas"> <br>
+    体重：<input type="number"><br>
+    <input type="submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>注册</title>
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+<h1 align="center">用户注册</h1>
+<form action="#" name="form">
+  <div></div> <hr>
+  <li class="yanzen"><span>昵称:</span><input type="text" name="user" required pattern="^[a-zA-Z][a-zA-Z0-9_]{4,15}$"></li> <hr>
+  <li class="yanzen"><span>注册邮箱:</span><input type="text" name="email" placeholder="2296621661@qq.com" required pattern="^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"></li> <hr>
+  <li class="yanzen"><span>密码:</span><input type="password" name="password" required pattern="^[a-zA-Z]\w{5,17}$"></li><hr>
+  <li class="sex"><span>性别</span><input type="radio" name="sex" id="man"><label for="man">男</label><input type="radio" name="sex" id="woman"><label for="woman">女</label></li> <hr>
+  <li class="yanzen"><span>年龄:</span><input type="text" name="age" required pattern="^[0-9]*$"></li><hr>
+  <li class="checkbox"><span>兴趣爱好:</span>
+    <input type="checkbox" name="xinqu">足球
+    <input type="checkbox" name="xinqu">篮球
+    <input type="checkbox" name="xinqu">游泳
+    <input type="checkbox" name="xinqu">唱歌
+    <input type="checkbox" name="xinqu">跑步
+    <input type="checkbox" name="xinqu">瑜伽
+  </li><hr>
+  <li class="yanzen"><span>自我介绍:</span><textarea name="" id="" cols="30" rows="10" placeholder="请输入你的信息" autofocus></textarea></li><hr>
+  <li><input type="submit" id="button" value="立即注册"></li><hr>
+</form>
+</body>
+</html>

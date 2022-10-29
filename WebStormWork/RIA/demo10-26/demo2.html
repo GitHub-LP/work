@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>output</title>
+</head>
+<body>
+<input type="text" value="50" id="a">+<input type="text" value="50" id="b">=<output id="c">100</output>
+</body>
+<script>
+    var aobj=document.getElementById("a");
+    var bobj=document.getElementById("b");
+    var cobj=document.getElementById("c");
+    aobj.oninput=function () {
+        cobj.innerHTML=parseInt(aobj.value)+parseInt(b.value);
+    }
+    bobj.oninput=function () {
+        cobj.innerHTML=parseInt(aobj.value)+parseInt(b.value);
+    }
+</script>
+</html>
