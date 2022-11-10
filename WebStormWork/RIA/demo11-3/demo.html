@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="小鸡子">
+<script>
+    var stu1 =new Object();
+    console.log(stu1);
+    stu1.name1="全民制作人们"
+    stu1.name2="蔡徐坤"
+    stu1.age=18;
+    stu1.xjz=function (){
+        console.log(this.name1+"大家好,我是练习时长两年半的个人练习生"+this.name2);
+    }
+    console.log(stu1)
+    var stu2={
+        name:"唱,跳,rap,篮球",
+        age:20,
+        study:function (){
+            console.log("喜欢"+this.name+"music……在今后的节目中，我还准备了很多我自己作词、作曲、编舞的原创作品，期待的话，请多多为我投票吧。");
+        }
+    }
+    stu1.xjz();
+    stu2.study();
+
+</script>
+</body>
+</html>

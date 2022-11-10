@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    name:<input type="text" id="username" name="username" style="">
+    <input type="submit">
+</form>
+<script>
+    var username=document.getElementById("username");
+   // console.log(username);
+    username.onfocus=function () {
+        this.style.backgroundColor="yellow";
+        this.style.width="300px";
+    }
+   /* username.onblur=function () {
+        this.style.backgroundColor="white";
+        this.style.width="100px";
+    }*/
+   /* username.onchange=function () {
+        this.style.backgroundColor="red";
+    }*/
+    username.oninput=function () {
+        this.style.backgroundColor="red";
+    }
+</script>
+</body>
+</html>

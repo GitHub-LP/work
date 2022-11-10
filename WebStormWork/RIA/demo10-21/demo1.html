@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [type="image"]{
+            width: 64px;
+            height: 32px;
+        }
+    </style>
+</head>
+<body>
+<form action="#" method="post" name="form1">
+    <li>姓名：<input type="text" name="uername" size="48" ></li>
+
+    <li>密码：<input type="password" name="psw"><br></li>
+    性别：<label for="man">男</label> <input type="radio" name="sex" id="man" checked> <label for="">女</label> <input type="radio" name="sex" id=""> <br>
+    爱好：<label for="">吃饭</label> <input type="checkbox" name="ins" checked> 睡觉 <input type="checkbox" name="ins"> 打豆豆 <input type="checkbox" name="ins"> <br>
+    <div>提交文件：<input type="file"> <br></div>
+    邮箱：<input type="email"> <br>
+    主页：<input type="url"> <br>
+    年龄：<input type="number" value="18" min="16" max="100"> <br>
+    进度：<input type="range" min="50" max="200" value="60" id="test"><br>
+    生日：<input type="date" value=""> <input type="datetime-local"><br>
+    搜索: <input type="search"> <input type="button" value="搜索"> <button>OK</button><br>
+    颜色：<input type="color" value="#F00505"> <br>
+    手机: <input type="text" pattern="^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$"> <br>
+    <input type="button" value="普通按钮"> <input type="submit"> <input type="reset"> <input type="image" src="2.jpg" >
+
+</form>
+<script>
+    var testobj=document.getElementById("test");
+    testobj.onchange=function () {
+        console.log(this.value);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div id="box" style=""></div>
+<input type="button" value="red" class="demo">
+<input type="button" value="green" class="demo" >
+<script>
+    var box=document.getElementById("box");
+    var inputarray=document.getElementsByClassName("demo")
+    /*function changered() {
+        box.style.backgroundColor="red";
+    }*/
+    /*function changegreen() {
+        box.style.backgroundColor="green";
+    }*/
+    //inputarray[0].onclick=changered;
+    //inputarray[1].onclick=changegreen;
+    inputarray[0].onclick=function () {
+        box.style.backgroundColor="red";
+    }
+    inputarray[1].onclick=function () {
+        box.style.backgroundColor="green";
+    }
+    //change();
+</script>
+</body>
+</html>

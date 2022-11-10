@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #out>li{
+            width: 20%;
+            border: 1px solid red;
+            float: left;
+            margin-left: 10px;
+        }
+        #out>li>ul{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<ul id="out">
+    <li class="mu">
+        一级菜单
+        <ul class="mu2">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </li>
+    <li class="mu">
+        一级菜单
+        <ul class="mu2">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </li>
+    <li class="mu">一级菜单</li>
+    <li class="mu">一级菜单</li>
+</ul>
+<script>
+    var muobj=document.getElementsByClassName("mu");
+    var mu2obj=document.getElementsByClassName("mu2");
+    /*muobj[0].onmouseover=function () {
+        alert("1");
+    }
+    muobj[1].onmouseover=function () {
+        alert("2");
+    }*/
+    for(let i=0;i<4;i++)
+    {
+        muobj[i].onmouseover=function () {
+            //alert(i+1);
+            mu2obj[i].style.display="block";
+        }
+        muobj[i].onmouseout=function () {
+            //alert(i+1);
+            mu2obj[i].style.display="none";
+        }
+    }
+</script>
+</body>
+</html>

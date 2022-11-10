@@ -1,0 +1,163 @@
+body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "microsoft yahei", "Helvetica", simhei,simsun,sans-serif;
+    background-color: #F7F7F7;
+}
+a{
+    text-decoration: none;
+}
+figcaption{
+    font-size: 24px;
+    text-align: center;
+    margin: 20px;
+}
+.player{
+    width: 720px;
+    height: 360px;
+    margin:  0 auto;
+    border-radius: 4px;
+    background: #000 url("loading.png") center/300px no-repeat;
+    position: relative;
+    text-align: center;
+}
+video{
+    display: none;
+    height: 100%;
+    margin: 0 auto;
+}
+video::-webkit-media-controls{
+    display: none !important;
+}
+
+/*播放控件*/
+.controls{
+    width: 700px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 4px;
+    position: absolute;
+    left:50%;
+    margin-left: -350px;
+    bottom: 5px;
+    z-index: 100000000000;
+    opacity: 1;
+}
+
+/*播放暂停*/
+.controls .switch{
+    display: block;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    color: #FFF;
+    position: absolute;
+    top: 11px;
+    left: 11px;
+}
+/*后退*/
+.controls .backward{
+    display: block;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    color: #FFF;
+    position: absolute;
+    left: 40px;
+    top: 11px;
+}
+/*前进*/
+.controls .forward{
+    display: block;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    color: #FFF;
+    position: absolute;
+    left: 70px;
+    top: 11px;
+}
+
+/*时间*/
+.timer{
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    left: 102px;
+    top: 11px;
+    color: #fff;
+    font-size: 14px;
+}
+/*音量条*/
+.range{
+    width:80px;
+    position:absolute;
+    right: 67px;
+    top: 11px;
+}
+
+
+/*音量静音开关*/
+.controls .volume{
+    display: block;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    color: #FFF;
+    position: absolute;
+    right: 40px;
+    top: 11px;
+}
+
+/*全屏*/
+.controls .expand{
+    display: block;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    color: #FFF;
+    position: absolute;
+    right: 11px;
+    top: 11px;
+}
+
+/*进度条*/
+.progress{
+    width: 305px;
+    height: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #555;
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    left: 235px;
+}
+/*下载进度*/
+.progress .loaded{
+    width: 0;
+    height: 100%;
+    background-color: #999;
+}
+
+.progress .line{
+    width: 0;
+    height: 100%;
+    background-color: #FFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress .bar{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
