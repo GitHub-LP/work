@@ -1,0 +1,5 @@
+#启停用administrator账户
+net user administrator active:no
+
+#mysql服务注册表取消关联
+sc delete mysql
