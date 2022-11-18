@@ -3,3 +3,6 @@ net user administrator active:no
 
 #mysql服务注册表取消关联
 sc delete mysql
+
+#HCl+ensp 设备启动问题
+bcdedit /set hypervisorlaunchtype off 
