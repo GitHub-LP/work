@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<style>
+  #mycanvas{
+    //border: 1px solid #f58 ;
+    border-radius: 50% 50%;
+    margin: 100px auto;
+    display: block;
+    background-color: #520134;
+  }
+
+</style>
+</head>
+<body>
+<canvas id="mycanvas" width="520" height="520">
+  当前浏览器不支持canvas,请升级你的浏览器。
+</canvas>
+<script>
+
+    var mycanvas=document.getElementById("mycanvas");
+    var ctx=mycanvas.getContext("2d");
+    var colors = ["#ff9999", "#ffe193", "#eeff00", "#88ff00",
+      "#93f5ff", "#2b8eff", "#9e6bff"];
+    var h = 3;
+    setInterval(function() {//变色
+       h = Math.floor(Math.random() * 7);
+    }, 1000);
+    draw();
+
+    function draw() {
+      var time = new Date();
+      ctx.clearRect(0, 0, 520, 520);
+      ctx.save();
+      ctx.strokeStyle = colors[h];
+      ctx.translate(260, 260);
+
+      //爱心
+      var percision = 100;
+      class Heart {
+        constructor(x, y, size) {
+          this.x = x || Math.random() * width;
+          this.y = y || Math.random() * height;
+          this.size = size || Math.random() * 2 + 1;
+          this.vertices = new Array();
+          for (var i = 0; i < percision; i++) {
+            var t = Math.PI * 2 * (i / percision - 0.5);
+            var tx = 12 * Math.sin(t) - 4 * Math.sin(3 * t);
+            var ty = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
+            this.vertices.push({x: tx, y: -ty});
+          }
+        }
+        aixin() {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.beginPath();
+          ctx.scale(this.size, this.size);
+          this.vertices.forEach(element => {
+            ctx.lineTo(element.x, element.y);
+          });
+          ctx.fillStyle = "#f58";
+          ctx.closePath();
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+      new Heart(0.01, -5, 2).aixin();
+
+      //五角星
+      ctx.beginPath();
+      ctx.lineWidth = '3';
+      //ctx.strokeStyle = '#f58';
+      //ctx.fillStyle='#f58';
+      ctx.moveTo(-112, -41);//1
+      ctx.lineTo(109, -41);//2
+      ctx.lineTo(-75, 90);//3
+      ctx.lineTo(0, -118);//4
+      ctx.lineTo(76, 90);//5
+      ctx.lineTo(-112, -41);//6
+      //ctx.fill();//填充
+      ctx.stroke();
+
+     //五角星2
+      ctx.rotate(3 * (2 * Math.PI / 30 * time.getSeconds() + 2 * Math.PI / 30000 * time.getMilliseconds())); //第二个五角星顺时针旋转
+      ctx.rotate(2 * Math.PI / 10); //旋转1/10，画第二个五角星
+      ctx.beginPath();
+      var r = 50, R = 117;
+      for (var i = 0; i < 5; i++) {
+        ctx.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * R, -Math.sin((18 + i * 72) / 180 * Math.PI) * R);
+        ctx.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * r, -Math.sin((54 + i * 72) / 180 * Math.PI) * r);
+      }
+      ctx.closePath();
+      ctx.stroke();
+
+      ctx.rotate(-7 * (2 * Math.PI / 40 * time.getSeconds() + 2 * Math.PI / 40000 * time.getMilliseconds()));
+      //画圆,从里面往外数
+      //1
+      ctx.beginPath();
+      ctx.arc(0, 0, 120, 0, 2 * Math.PI);
+      //ctx.strokeStyle = "#f58";
+      ctx.stroke();
+
+      //2
+      ctx.beginPath();
+      ctx.arc(0, 0, 150, 0, 2 * Math.PI);
+     // ctx.strokeStyle = "#f58";
+      ctx.stroke();
+
+      var r = 120, R = 150; //第1圈与第2圈之间的连线
+      for (var i = 0; i < 36; i++) {
+        ctx.beginPath();
+        ctx.moveTo(Math.cos((i * 10) / 180 * Math.PI) * r, -Math.sin((i * 10) / 180 * Math.PI) * r);
+        ctx.lineTo(Math.cos((i * 10) / 180 * Math.PI) * R, -Math.sin((i * 10) / 180 * Math.PI) * R);
+        ctx.stroke();
+      }
+
+      //3
+      ctx.beginPath();
+      ctx.arc(0, 0, 200, 0, 2 * Math.PI);
+      //ctx.strokeStyle = "#f58";
+      ctx.stroke();
+
+      ctx.rotate(5 * (2 * Math.PI / 50 * time.getSeconds() + 2 * Math.PI / 50000 * time.getMilliseconds()));
+      var r = 170;
+      for (var i = 0; i < 12; i++) {
+        ctx.beginPath();
+        ctx.rotate( Math.PI / 6);
+        new Heart(175, 1, 1).aixin();
+        ctx.font=" 20px Arial";
+        //ctx.fillStyle="#f58";
+        //ctx.fillText("L",165,50);
+        ctx.strokeText("L",165,50);
+        ctx.stroke();
+      }
+
+      ctx.restore();
+      stop = requestAnimationFrame(draw);
+    }
+
+</script>
+</body>
+</html>

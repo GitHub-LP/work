@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style type="text/css">
+    #can {
+      border: 1px solid #000000;
+      background-color: black;
+      margin: 100px auto;
+      display: block;
+    }
+  </style>
+</head>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<body>
+<canvas id="can" width="550" height="550">
+  你的浏览器不支持 canvas，请升级你的浏览器
+</canvas>
+</body>
+<script type="text/javascript">
+  var c = document.getElementById("can");
+  var ctx = c.getContext('2d');
+  var colors = ["white", "rgb(246,233,249)", "#C5EEF2", "rgb(1,198,246)", "rgb(230,167,239)", "rgb(252,247,175)",
+    "rgb(242,60,153)", "rgb(166,220,246)",
+    "rgb(230,94,85)", "rgb(112,254,115)"
+  ];//颜色数组
+  var chars = ["♈", "♉ ", "♊", "♋", "♌", "♍", " ♎", " ♏", " ♐", "♑", " ♒", "♓"]; //12星座
+  setInterval(function() {//变色
+    h = Math.floor(Math.random() * 9);
+  }, 200);
+  var h = 3;
+  draw();
+
+  function draw() {
+
+
+     var stepClear = 1;
+    var time = new Date();
+     ctx.clearRect(0, 0, 550, 550);
+
+     function clearArc(x, y, radius) { //圆心(x,y)，半径radius
+       var calcWidth = radius - stepClear;
+       var calcHeight = Math.sqrt(radius * radius - calcWidth * calcWidth);
+
+       var posX = x - calcWidth;
+       var posY = y - calcHeight;
+
+       var widthX = 2 * calcWidth;
+       var heightY = 2 * calcHeight;
+
+       if (stepClear <= radius) {
+         ctx.clearRect(posX, posY, widthX, heightY);
+         stepClear += 1;
+         clearArc(x, y, radius);
+       }
+     }
+
+
+     ctx.save();
+     ctx.strokeStyle = colors[h];
+     // ctx.strokeStyle = "rgb(112,254,115)";
+
+
+     ctx.translate(275, 275);
+       ctx.globalCompositeOperation = "destination-over"; //新图像在旧图像下面
+
+     ctx.lineWidth = 3;
+
+    ctx.rotate(-7 * (2 * Math.PI / 60 * time.getSeconds() + 2 * Math.PI / 60000 * time.getMilliseconds()));
+
+    ctx.beginPath(); //左侧月亮小圈
+    ctx.arc(-170, 0, 50, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    ctx.beginPath(); //左侧月亮大圈
+    ctx.arc(-187, 0, 75, 0, 2 * Math.PI);
+    ctx.stroke();
+    ctx.fill();
+    clearArc(-170, 0, 48); //清除一个圆形区域
+
+    ctx.beginPath(); //右侧太阳小圈
+    ctx.arc(190, 0, 30, 0, 2 * Math.PI);
+    ctx.stroke();
+    ctx.fill();
+
+    ctx.translate(190, 0); //移动原点画太阳的放射线
+    var r = 0,
+            R = 90; //太阳外尖三角内部直线
+    for (var i = 0; i < 4; i++) {
+      if (i != 0) {
+        ctx.beginPath();
+        ctx.moveTo(Math.cos((i * 90) / 180 * Math.PI) * r, -Math.sin((i * 90) / 180 * Math.PI) * r);
+        ctx.lineTo(Math.cos((i * 90) / 180 * Math.PI) * R, -Math.sin((i * 90) / 180 * Math.PI) * R);
+        ctx.stroke();
+      }
+    }
+
+
+    ctx.beginPath(); //太阳外三个尖三角形
+    var r = 20,
+            R = 90;
+    for (var i = 0; i < 4; i++) {
+      if (i != 0) {
+        ctx.lineTo(Math.cos((i * 90) / 180 * Math.PI) * R, -Math.sin((i * 90) / 180 * Math.PI) * R);
+        ctx.lineTo(-Math.sin((-45 + i * 90) / 180 * Math.PI) * r, -Math.cos((-45 + i * 90) / 180 * Math.PI) * r);
+      }
+    }
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+
+    var r = 30,
+            R = 60; //太阳外短三角内部直线
+    for (var i = 0; i < 4; i++) {
+      ctx.beginPath();
+      ctx.moveTo(Math.cos((45 + i * 90) / 180 * Math.PI) * r, -Math.sin((45 + i * 90) / 180 * Math.PI) * r);
+      ctx.lineTo(Math.cos((45 + i * 90) / 180 * Math.PI) * R, -Math.sin((45 + i * 90) / 180 * Math.PI) * R);
+      ctx.stroke();
+    }
+
+    ctx.beginPath(); //太阳外三个短三角形
+    var r = 30,
+            R = 60;
+    for (var i = 0; i < 4; i++) {
+      ctx.lineTo(Math.cos((45 + i * 90) / 180 * Math.PI) * R, -Math.sin((45 + i * 90) / 180 * Math.PI) * R);
+      ctx.lineTo(-Math.sin((i * 90) / 180 * Math.PI) * r, -Math.cos((i * 90) / 180 * Math.PI) * r);
+
+    }
+    ctx.stroke();
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.translate(-190, 0);
+
+    ctx.globalCompositeOperation = "source-over"; //东南西北四个字及放字小圆
+
+    ctx.beginPath(); //西的小圆
+    ctx.arc(-240, 0, 20, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath(); //东的小圆
+    ctx.arc(240, 0, 20, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath(); //北的小圆
+    ctx.arc(0, -240, 20, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath(); //南的小圆
+    ctx.arc(0, 240, 20, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.lineWidth = 1; //字体线为1
+    ctx.font = "30px sans-serif"; //字体大小
+
+    ctx.translate(-255, 0); //绘制西字
+    ctx.rotate(2 * Math.PI / 4);
+    ctx.strokeText("西", -15, -5);
+    ctx.rotate(-2 * Math.PI / 4);
+    ctx.translate(255, 0);
+
+    ctx.translate(255, 0); //绘制东字
+    ctx.rotate(-2 * Math.PI / 4);
+    ctx.strokeText("東", -15, -5);
+    ctx.rotate(2 * Math.PI / 4);
+    ctx.translate(-255, 0);
+
+    ctx.translate(0, -255); //绘制北字
+    ctx.rotate(2 * Math.PI / 2);
+    ctx.strokeText("北", -15, -5);
+    ctx.rotate(-2 * Math.PI / 2);
+    ctx.translate(0, 255);
+
+    ctx.translate(0, 255); //绘制南字
+    // ctx.rotate(2 * Math.PI / 2);
+    ctx.strokeText("南", -15, -5);
+    // ctx.rotate(-2 * Math.PI / 2);
+    ctx.translate(0, -255);
+
+    ctx.lineWidth = 3;
+
+    ctx.rotate(7 * (2 * Math.PI / 60 * time.getSeconds() + 2 * Math.PI / 60000 * time.getMilliseconds()));
+
+     ctx.beginPath(); //第一个中心五角星  不动的
+     var r = 60,
+             R = 147;
+     for (var i = 0; i < 5; i++) {
+       ctx.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * R, -Math.sin((18 + i * 72) / 180 * Math.PI) * R);
+      ctx.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * r, -Math.sin((54 + i * 72) / 180 * Math.PI) * r);
+    }
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.globalCompositeOperation = "destination-over"; //新图像在旧图像下面
+
+    ctx.rotate(3 * (2 * Math.PI / 30 * time.getSeconds() + 2 * Math.PI / 30000 * time.getMilliseconds())); //第二个五角星顺时针旋转
+
+    ctx.rotate(2 * Math.PI / 10); //旋转1/10，画第二个五角星
+    ctx.beginPath();
+    var r = 60,
+            R = 147;
+    for (var i = 0; i < 5; i++) {
+      ctx.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * R, -Math.sin((18 + i * 72) / 180 * Math.PI) * R);
+      ctx.lineTo(Math.cos((54 + i * 72) / 180 * Math.PI) * r, -Math.sin((54 + i * 72) / 180 * Math.PI) * r);
+    }
+    ctx.closePath();
+    ctx.stroke();
+
+    var R = 147; //第二个五角星内的线
+    for (var i = 0; i < 5; i++) {
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(Math.cos((18 + i * 72) / 180 * Math.PI) * R, -Math.sin((18 + i * 72) / 180 * Math.PI) * R);
+      ctx.stroke();
+    }
+
+    ctx.rotate(-2 * Math.PI / 10); //旋转回去
+
+    ctx.lineWidth = 3;
+    ctx.beginPath(); //五角星内圈
+    ctx.arc(0, 0, 140, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    ctx.beginPath(); //五角星外圈
+    ctx.arc(0, 0, 148, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    var r = 140,
+            R = 148; //五角星外圈与内圈之间的连线
+    for (var i = 0; i < 36; i++) {
+      ctx.beginPath();
+      ctx.moveTo(Math.cos((i * 10) / 180 * Math.PI) * r, -Math.sin((i * 10) / 180 * Math.PI) * r);
+      ctx.lineTo(Math.cos((i * 10) / 180 * Math.PI) * R, -Math.sin((i * 10) / 180 * Math.PI) * R);
+      ctx.stroke();
+    }
+
+    ctx.rotate(-(2 * Math.PI / 30 * time.getSeconds() + 2 * Math.PI / 30000 * time.getMilliseconds()));
+
+
+    ctx.beginPath(); //最外面大圈
+    ctx.arc(0, 0, 262, 0, 2 * Math.PI);
+    // ctx.closePath();
+    ctx.stroke();
+
+    ctx.beginPath(); //第二大圈
+    ctx.arc(0, 0, 245, 0, 2 * Math.PI);
+    // ctx.closePath();
+    ctx.stroke();
+
+    ctx.lineWidth = 5;
+    ctx.beginPath(); //第三大圈
+    ctx.arc(0, 0, 237, 0, 2 * Math.PI);
+    // ctx.closePath();
+    ctx.stroke();
+
+    ctx.lineWidth = 3;
+    ctx.beginPath(); //第四大圈
+    ctx.arc(0, 0, 220, 0, 2 * Math.PI);
+    // ctx.closePath();
+    ctx.stroke();
+
+    var r = 220,
+            R = 237; //第四圈与第三圈之间的连线
+    for (var i = 0; i < 36; i++) {
+      ctx.beginPath();
+      ctx.moveTo(Math.cos((i * 10) / 180 * Math.PI) * r, -Math.sin((i * 10) / 180 * Math.PI) * r);
+      ctx.lineTo(Math.cos((i * 10) / 180 * Math.PI) * R, -Math.sin((i * 10) / 180 * Math.PI) * R);
+      ctx.stroke();
+    }
+
+    ctx.rotate(12 * (2 * Math.PI / 60 * time.getSeconds() + 2 * Math.PI / 60000 * time.getMilliseconds()));
+    var r = 150,
+            R = 210; //正方形内部直线
+    for (var i = 0; i < 12; i++) {
+      ctx.beginPath();
+      ctx.moveTo(Math.cos((30 + i * 30) / 180 * Math.PI) * r, -Math.sin((30 + i * 30) / 180 * Math.PI) * r);
+      ctx.lineTo(Math.cos((30 + i * 30) / 180 * Math.PI) * R, -Math.sin((30 + i * 30) / 180 * Math.PI) * R);
+      ctx.stroke();
+    }
+
+    //三个小正方形
+    var r = 210;
+    for (var j = 0; j < 4; j++) {
+      ctx.beginPath();
+      for (var i = 0; i < 4; i++) {
+        // ctx.lineTo(0, 0);
+        ctx.lineTo(Math.cos((30 * j + i * 90) / 180 * Math.PI) * r, -Math.sin((30 * j + i * 90) / 180 * Math.PI) * r);
+      }
+      ctx.closePath();
+      ctx.stroke();
+      ctx.fill();
+
+    }
+
+    var r = 220;
+    for (var j = 0; j < 4; j++) {
+      ctx.beginPath(); //三个大正方形
+      for (var i = 0; i < 4; i++) {
+        // ctx.lineTo(0, 0);
+        ctx.lineTo(Math.cos((30 * j + i * 90) / 180 * Math.PI) * r, -Math.sin((30 * j + i * 90) / 180 * Math.PI) * r);
+      }
+      ctx.closePath();
+      ctx.stroke();
+    }
+
+    ctx.lineWidth = 1; //字体线为1
+    ctx.font = "15px sans-serif"; //字体大小
+
+
+    for (var i = 0; i < 12; i++) {
+      ctx.rotate(i * 2 * Math.PI / 12 + 15);
+      ctx.translate(-217, 0); //绘制西字
+      ctx.rotate(2 * Math.PI / 4);
+      ctx.strokeText(chars[i], 5, -5);
+      ctx.rotate(-2 * Math.PI / 4);
+      ctx.translate(217, 0);
+      ctx.rotate(-(i * 2 * Math.PI / 12 + 15));
+    }
+
+
+    ctx.restore();
+    stop = requestAnimationFrame(draw);
+
+  }
+</script>
+</html>
